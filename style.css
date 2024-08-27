@@ -67,8 +67,10 @@ a:hover {
 form {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 600px; /* Increased from 500px */
+    width: 100%; /* Added to ensure full width on smaller screens */
     margin: 0 auto;
+    padding: 0 1rem; /* Added for some padding on smaller screens */
 }
 
 label {
@@ -84,6 +86,11 @@ input, textarea {
     color: #e0e0e0;
 }
 
+textarea {
+    min-height: 150px; /* Set a minimum height for the message box */
+    resize: vertical; /* Allow vertical resizing */
+}
+
 button {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
@@ -96,4 +103,11 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media (max-width: 650px) {
+    form {
+        max-width: 100%;
+    }
 }
